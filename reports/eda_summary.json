@@ -1,0 +1,199 @@
+{
+  "dataset": {
+    "n_linhas": 2500,
+    "n_colunas_originais": 19,
+    "valores_ausentes": 0,
+    "linhas_duplicadas": 0
+  },
+  "nps_score": {
+    "media": 4.38,
+    "mediana": 4.4,
+    "desvio_padrao": 2.51,
+    "minimo": 0.0,
+    "maximo": 10.0
+  },
+  "categorias": {
+    "contagem": {
+      "Detrator": 1975,
+      "Neutro": 369,
+      "Promotor": 156
+    },
+    "percentual": {
+      "Detrator": 79.0,
+      "Neutro": 14.8,
+      "Promotor": 6.2
+    },
+    "nps_metric": -72.8
+  },
+  "correlacoes_com_nps": {
+    "delivery_delay_days": -0.597,
+    "complaints_count": -0.497,
+    "customer_service_contacts": -0.351,
+    "resolution_time_days": -0.191,
+    "freight_value": -0.041,
+    "customer_age": -0.01,
+    "customer_tenure_months": -0.01,
+    "delivery_time_days": 0.001,
+    "items_quantity": 0.011,
+    "payment_installments": 0.024,
+    "discount_value": 0.025,
+    "delivery_attempts": 0.028,
+    "order_value": 0.037,
+    "csat_internal_score": 0.564,
+    "repeat_purchase_30d": 0.57
+  },
+  "principais_viloes": {
+    "delivery_delay_days": -0.597,
+    "complaints_count": -0.497,
+    "customer_service_contacts": -0.351
+  },
+  "delivery_time_vs_delay": {
+    "corr_delivery_time_days": 0.001,
+    "corr_delivery_delay_days": -0.597
+  },
+  "drivers": {
+    "delivery_delay_days": [
+      {
+        "delivery_delay_days": "0",
+        "n": 277,
+        "nps_medio": 6.86,
+        "pct_detrator": 42.96,
+        "pct_promotor": 25.27
+      },
+      {
+        "delivery_delay_days": "1",
+        "n": 615,
+        "nps_medio": 5.55,
+        "pct_detrator": 65.85,
+        "pct_promotor": 10.24
+      },
+      {
+        "delivery_delay_days": "2",
+        "n": 646,
+        "nps_medio": 4.58,
+        "pct_detrator": 82.04,
+        "pct_promotor": 2.94
+      },
+      {
+        "delivery_delay_days": "3",
+        "n": 525,
+        "nps_medio": 3.44,
+        "pct_detrator": 93.33,
+        "pct_promotor": 0.76
+      },
+      {
+        "delivery_delay_days": "4",
+        "n": 270,
+        "nps_medio": 2.44,
+        "pct_detrator": 97.78,
+        "pct_promotor": 0.0
+      },
+      {
+        "delivery_delay_days": "5+",
+        "n": 167,
+        "nps_medio": 1.28,
+        "pct_detrator": 100.0,
+        "pct_promotor": 0.0
+      }
+    ],
+    "complaints_count": [
+      {
+        "complaints_count": "0",
+        "n": 23,
+        "nps_medio": 8.52,
+        "pct_detrator": 4.35,
+        "pct_promotor": 52.17
+      },
+      {
+        "complaints_count": "1",
+        "n": 122,
+        "nps_medio": 7.77,
+        "pct_detrator": 18.03,
+        "pct_promotor": 31.15
+      },
+      {
+        "complaints_count": "2",
+        "n": 277,
+        "nps_medio": 6.05,
+        "pct_detrator": 50.9,
+        "pct_promotor": 15.16
+      },
+      {
+        "complaints_count": "3",
+        "n": 507,
+        "nps_medio": 4.91,
+        "pct_detrator": 74.75,
+        "pct_promotor": 5.92
+      },
+      {
+        "complaints_count": "4+",
+        "n": 1571,
+        "nps_medio": 3.59,
+        "pct_detrator": 91.15,
+        "pct_promotor": 2.16
+      }
+    ],
+    "customer_service_contacts": [
+      {
+        "customer_service_contacts": "0",
+        "n": 554,
+        "nps_medio": 5.54,
+        "pct_detrator": 63.9,
+        "pct_promotor": 13.54
+      },
+      {
+        "customer_service_contacts": "1",
+        "n": 816,
+        "nps_medio": 4.66,
+        "pct_detrator": 76.47,
+        "pct_promotor": 6.62
+      },
+      {
+        "customer_service_contacts": "2",
+        "n": 640,
+        "nps_medio": 4.12,
+        "pct_detrator": 84.69,
+        "pct_promotor": 3.44
+      },
+      {
+        "customer_service_contacts": "3",
+        "n": 314,
+        "nps_medio": 3.2,
+        "pct_detrator": 91.08,
+        "pct_promotor": 1.27
+      },
+      {
+        "customer_service_contacts": "4+",
+        "n": 176,
+        "nps_medio": 2.47,
+        "pct_detrator": 96.02,
+        "pct_promotor": 0.57
+      }
+    ]
+  },
+  "vazamento_repeat_purchase_30d": {
+    "0": {
+      "Detrator": 86.5,
+      "Neutro": 13.5,
+      "Promotor": 0.0
+    },
+    "1": {
+      "Detrator": 0.0,
+      "Neutro": 28.4,
+      "Promotor": 71.6
+    }
+  },
+  "regras_categoria": {
+    "detrator": "nota arredondada 0-6",
+    "neutro": "nota arredondada 7-8",
+    "promotor": "nota arredondada 9-10"
+  },
+  "variaveis_excluidas_modelo_primario": {
+    "vazamento": [
+      "repeat_purchase_30d"
+    ],
+    "proxy_satisfacao": [
+      "csat_internal_score"
+    ]
+  }
+}

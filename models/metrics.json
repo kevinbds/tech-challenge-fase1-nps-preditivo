@@ -1,0 +1,124 @@
+{
+  "configuracao": {
+    "n_treino": 2000,
+    "n_teste": 500,
+    "test_size": 0.2,
+    "random_state": 42,
+    "features_usadas": [
+      "order_value",
+      "items_quantity",
+      "discount_value",
+      "payment_installments",
+      "delivery_time_days",
+      "delivery_delay_days",
+      "freight_value",
+      "delivery_attempts",
+      "customer_service_contacts",
+      "resolution_time_days",
+      "complaints_count",
+      "customer_age",
+      "customer_tenure_months",
+      "customer_region"
+    ],
+    "features_excluidas": [
+      "repeat_purchase_30d",
+      "csat_internal_score"
+    ]
+  },
+  "regressao": {
+    "alvo": "nps_score (continuo, 0-10)",
+    "modelos": {
+      "Baseline (media)": {
+        "MAE": 2.086,
+        "RMSE": 2.549,
+        "R2": -0.0
+      },
+      "Regressao Linear": {
+        "MAE": 1.354,
+        "RMSE": 1.72,
+        "R2": 0.545
+      },
+      "Random Forest": {
+        "MAE": 1.423,
+        "RMSE": 1.78,
+        "R2": 0.512
+      },
+      "Gradient Boosting": {
+        "MAE": 1.371,
+        "RMSE": 1.729,
+        "R2": 0.54
+      }
+    },
+    "melhor_modelo": "Regressao Linear",
+    "cv_r2_media": 0.552,
+    "cv_r2_desvio": 0.028
+  },
+  "classificacao": {
+    "alvo": "is_detrator (1 = detrator, nota arredondada <= 6)",
+    "proporcao_detratores_treino": 0.79,
+    "modelos": {
+      "Baseline (mais frequente)": {
+        "acuracia": 0.79,
+        "acuracia_balanceada": 0.5,
+        "precisao_detrator": 0.79,
+        "recall_detrator": 1.0,
+        "f1_detrator": 0.883,
+        "roc_auc": 0.5
+      },
+      "Regressao Logistica": {
+        "acuracia": 0.834,
+        "acuracia_balanceada": 0.818,
+        "precisao_detrator": 0.938,
+        "recall_detrator": 0.846,
+        "f1_detrator": 0.889,
+        "roc_auc": 0.905
+      },
+      "Random Forest": {
+        "acuracia": 0.854,
+        "acuracia_balanceada": 0.705,
+        "precisao_detrator": 0.868,
+        "recall_detrator": 0.962,
+        "f1_detrator": 0.912,
+        "roc_auc": 0.898
+      }
+    },
+    "melhor_modelo": "Regressao Logistica",
+    "matriz_confusao": {
+      "verdadeiro_nao_detrator": 83,
+      "falso_detrator": 22,
+      "falso_nao_detrator": 61,
+      "verdadeiro_detrator": 334
+    },
+    "importancia_variaveis": {
+      "delivery_delay_days": 0.1745,
+      "complaints_count": 0.1719,
+      "resolution_time_days": 0.0268,
+      "order_value": 0.0006,
+      "freight_value": 0.0006,
+      "customer_age": 0.0002,
+      "customer_service_contacts": 0.0002,
+      "customer_tenure_months": 0.0002,
+      "discount_value": -0.0001,
+      "items_quantity": -0.0001,
+      "delivery_time_days": -0.0001,
+      "payment_installments": -0.0003,
+      "customer_region": -0.001,
+      "delivery_attempts": -0.0024
+    }
+  },
+  "demonstracao_vazamento": {
+    "classificacao_auc": {
+      "operacional": 0.898,
+      "com_vazamento": 0.944
+    },
+    "regressao_r2": {
+      "operacional": 0.548,
+      "com_vazamento": 0.645
+    },
+    "variaveis_suspeitas": [
+      "repeat_purchase_30d",
+      "csat_internal_score"
+    ],
+    "leitura": "Incluir as variaveis suspeitas eleva AUC e R2, mas elas nao estao disponiveis antes da pesquisa (vazamento) e sao proxies de satisfacao (circularidade). Por isso ficam fora do modelo."
+  }
+}
